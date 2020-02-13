@@ -1,18 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios'
 
 Vue.use(VueRouter)
-// 配置请求的根路径
-axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
-// 请求拦截器
-axios.interceptors.request.use(config => {
-  console.log(config)
-  config.headers.Authorization = window.sessionStorage.getItem('token')
-  // 最后必须return config
-  return config
-})
-Vue.prototype.$http = axios
 
 const routes = [
   {
@@ -43,6 +32,10 @@ const routes = [
       {
         path: '/roles',
         component: () => import('../components/power/Roles.vue')
+      },
+      {
+        path: '/categories',
+        component: () => import('../components/goods/Cate.vue')
       }
     ]
   }
