@@ -40,6 +40,10 @@ const routes = [
       {
         path: '/params',
         component: () => import('../components/goods/Params.vue')
+      },
+      {
+        path: '/reports',
+        component: () => import('../components/report/Report.vue')
       }
     ]
   }
